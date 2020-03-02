@@ -23,4 +23,17 @@ public class NewTest {
       AssertJUnit.assertEquals(actualTitle, expectedTitle);
       driver.close();
   }
+	
+ @Test
+  public void verifyLogin() {
+      
+      System.out.println("launching firefox browser");
+      System.setProperty("webdriver.gecko.driver", driverPath);
+      driver = new FirefoxDriver();
+      driver.get(baseUrl);
+      String expectedTitle = "Welcome: Mercury Tours";
+      String actualTitle = driver.getTitle();
+      AssertJUnit.assertEquals(actualTitle, expectedTitle);
+      driver.close();
+  }
 }
